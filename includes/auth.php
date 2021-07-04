@@ -53,21 +53,21 @@
         $cookie_name = "user".$user[0];
         $_SESSION["userinfo"] = $user;
         $cookie_value = $user[1];
-        if($_GET['remember'] == 'on'){
+        if(isset($_GET['remember']) && $_GET['remember'] == 'on'){
             setcookie($cookie_name, $cookie_value, time() + (86400*30), "/");
         }
         else{
             setcookie($cookie_name, $cookie_value, time() + 10800, "/");
         }
         $_SESSION["cookie_name"] = $cookie_name;
-        header("Location: ../home.php");
+        ?><script>history.go(-1);</script><?php
     }
 
     if($_GET['action'] == 'logout'){
         setcookie($_SESSION["cookie_name"], "", time() - 3600);
         unset($_SESSION["cookie_name"]);
         unset($_SESSION["userinfo"]);
-        header("Location: ../home.php");
+        ?><script>history.go(-1);</script><?php
     }
 
     function validation($email,$username,$password){
@@ -116,7 +116,6 @@
     function checkLogin(){
         $username = $_GET['uname'];
         $password = $_GET['psw'];
-        $rememberme = $_GET['remember'];
 
         $conn = OpenCon();
         $sql1 = "SELECT salt FROM users WHERE username='$username'";

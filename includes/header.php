@@ -17,8 +17,20 @@
         <a href="./home.php"><img src="./images/tot.png" alt="logo"></a>
         <ul>
             <li><a href="./home.php">Home</a></li>
-            <li><a href="">Products</a></li>
+            <div class="profile-dropdown">
+            <li><a href="./product.php" class="profile-dropbtn">Products</a>
+            <div class="profile-dropdown-content">
+              <a href="./product.php?cat=mouse">Mouse</a>
+              <a href="./product.php?cat=keyboard">Keyboard</a>
+              <a href="./product.php?cat=graphiccard">Graphic Card</a>
+              <a href="./product.php?cat=ram">RAM</a>
+              <a href="./product.php?cat=casing">Casing</a>
+            </div>
+            </li>
+            </div>
         </ul>
+      
+        
 
         <div id="search-bar">
         <form action="" method="POST">        
@@ -44,7 +56,17 @@
         <a href="./home.php"><img src="./images/tot.png" alt="logo"></a>
         <ul>
             <li><a href="./home.php">Home</a></li>
-            <li><a href="">Products</a></li>
+            <div class="profile-dropdown">
+            <li><a href="./product.php" class="profile-dropbtn">Products</a>
+            <div class="profile-dropdown-content">
+              <a href="./product.php?cat=mouse">Mouse</a>
+              <a href="./product.php?cat=keyboard">Keyboard</a>
+              <a href="./product.php?cat=graphiccard">Graphic Card</a>
+              <a href="./product.php?cat=ram">RAM</a>
+              <a href="./product.php?cat=casing">Casing</a>
+            </div>
+            </li>
+            </div>
         </ul>
         
         <div id="search-bar">
@@ -56,9 +78,9 @@
 
         <div id=upper-right-corner>
             <a href="shoppingcart.php" id="cart" style='font-size:24px'>Cart <i class='fas fa-shopping-cart'></i></a>
-            <a href="shoppingcart.php" id="cart-item">2</a>
+            <a href="shoppingcart.php" id="cart-item"><?php echo count($_SESSION["cart_item"]); ?></a>
             <div class="dropdown">
-            <button id="profile" class="dropbtn" onclick="profile_dropdown()"><img src="./images/img_avatar2.png" alt="Avatar" class="profile_avatar"></button>
+            <button id="profile" class="dropbtn"><img src="./images/img_avatar2.png" alt="Avatar" class="profile_avatar"></button>
               <div class="dropdown-content">
               <a href="javascript:;" onclick="openProfileModal();">Edit Profile</a>
               <a href="includes/auth.php?action=logout">Logout</a>

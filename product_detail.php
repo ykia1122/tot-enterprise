@@ -1,4 +1,6 @@
-
+<?php
+    
+    ?>  
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,11 +12,16 @@
     </head>
 
     <body>
-    <div id="product_container">
+    
 <?php
     include 'includes/header.php';
     include 'includes/dbconnection.php';
     
+    session_start();
+        
+
+
+?><div class="product_container"><?php
     if(isset($_GET['id'])){
         $conn = OpenCon();
         $pid = $_GET['id'];
@@ -31,27 +38,39 @@
             <p class="product_desc">%s</p>
             <p class="nett_price">%s</p>
             <p class="total_quantity">%s quantity left</p>
-            <button onclick="minusItem()" class="minus_item">-</button>
-            <input type=text class="quantity" value=1></input>
-            <button class="plus_item">+</button>
-            <input type=submit value="Add to cart" class="addtocart"></button>
-            </div
-            ',$row->image_path,$row->product_name,$row->product_desc,$row->nett_price,$row->product_quantity);
+            
+            <form class="form-addcart" action="includes/addtocart.php" method="GET">
+            <button type="button" onclick="minusItem()" class="minus_item">-</button>
+            <input id="quantity" class="txtquantity" type="number" name="num" value="1"></input>
+            <button type="button" onclick="plusItem()" class="plus_item">+</button>
+            <input type="hidden" name="action" value="add"></input>
+            <input type="hidden" id="max-quan" value=%s></input>
+            <input type="hidden" name="product_id" value="%s"></input>
+            <input type="submit" value="Add to cart" class="addtocart"></button>
+            </form>
+            </div>
+            ',$row->image_path,$row->product_name,$row->product_desc,$row->nett_price,$row->product_quantity,$row->product_quantity,$row->product_id);
         }
 }
-    function minusItem(){
-        
-    }
-    if(isset($_GET['addtocart'])){
-        $_SESSION["cart"] = $_GET['productname'];
-        echo $_SESSION["cart"];
-    }
 
+if(isset($_SESSION["cartmsg"])){
+    if($_SESSION["cartmsg"] == "-1"){
+        ?> <script>  alert("Please Log In first"); openLoginModal();  </script> <?php
+    }
+    else if($_SESSION["cartmsg"] == "1"){
+    ?> <script> alert("Item added to cart");  </script> <?php
+    }
+    unset($_SESSION["cartmsg"]);
+}
 ?>
 
     </div>
 
+
     </body>
+
+
+    
 </html>
 
 

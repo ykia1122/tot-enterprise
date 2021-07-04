@@ -14,10 +14,6 @@ function openRegisterModal(){
     document.getElementById('login-modal').style.display='none';
   }
 
-function profile_dropdown(){
-  document.getElementById('profile_dropdown').classList.toggle("show");
-}
-
 function openProfileModal(){
   document.getElementById('profile-modal').style.display='block';
 }
@@ -40,4 +36,27 @@ function openPasswordModal(){
 
 function closePasswordModal(){
   document.getElementById('password-modal').style.display='none';
+}
+
+function minusItem(){
+  if(document.getElementById('quantity').value -1 > 0)
+      document.getElementById('quantity').value--;
+  else
+      document.getElementById('quantity').value = 1;
+}
+
+
+function plusItem(){
+  if(document.getElementById('quantity').value ++ < document.getElementById("max-quan").value)
+      document.getElementById('quantity').value;
+  else
+      document.getElementById('quantity').value = document.getElementById("max-quan").value;
+}
+
+function openCartModal(){
+  document.getElementById('cart-modal').style.display='block';
+}
+
+function closeCartModal(){
+  document.getElementById('cart-modal').style.display='none';
 }

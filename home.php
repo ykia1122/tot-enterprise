@@ -75,11 +75,16 @@
                     <td><a href="product_detail.php?id=%s"><img src=".%s"></a>
                     <h2>%s</h2>
                     <p>RM%s</p>
-                    <button>Add to cart</button>
+                    <form action="includes/addtocart.php" method="get">
+                    <button >Add to cart</button>
+                    <input type="hidden" name="product_id" value="%s">
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="num" value="1">
+                    </form>
                     </td>
                     
 
-                    ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price);
+                    ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price,$row->product_id);
                 }
             ?>
             
@@ -104,9 +109,15 @@
                     <td><a href="product_detail.php?id=%s"><img src=".%s"></a>
                     <h2>%s</h2>
                     <p>RM%s</p>
+                    <form action="includes/addtocart.php" method="get">
+                    <button >Add to cart</button>
+                    <input type="hidden" name="product_id" value="%s">
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="num" value="1">
+                    </form>
                     </td>
 
-                    ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price);
+                    ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price,$row->product_id);
                 }
             ?>
         </tr>
@@ -186,6 +197,15 @@
     if(isset($_SESSION["updmsg"])){
         ?> <script> openProfileModal(); alert('<?php echo $_SESSION["updmsg"];?>'); </script> <?php 
         unset($_SESSION["updmsg"]);
+    }
+    if(isset($_SESSION["cartmsg"])){
+        if($_SESSION["cartmsg"] == "-1"){
+            ?> <script>  alert("Please Log In first"); openLoginModal();  </script> <?php
+        }
+        else if($_SESSION["cartmsg"] == "1"){
+        ?> <script> alert("Item added to cart");  </script> <?php
+        }
+        unset($_SESSION["cartmsg"]);
     }
 
 ?>
