@@ -153,7 +153,7 @@ body{
   font-size: 15pt;
 }
 
-.noitem button{
+.noitem a{
   margin-top: 1em;
   font-size: 12pt;
 }
@@ -161,10 +161,53 @@ body{
 .cart-table{
   margin-top:5%; 
   margin-left:5%;
-  border:1px solid black;
-  width:55%
+  width:55%;
 }
 
 .cart-table td{
   border:1px solid black;
+}
+
+.cart-table .title{
+  border: none;
+  padding-bottom: 1em;
+}
+
+.cart-table .title a{
+  text-decoration: none;
+
+}
+
+.product_table{
+  max-width: 100%;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin-top: 1%;
+}
+
+.product_table td{
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 2%;
+  border: 1px solid black;
+  width: 30%;
+}
+
+.product_table td img{
+  max-width: 30%;
+  max-height: 20%;
+  padding-top: 2%;
+}
+
+.product_table .title{
+  border: none;
+  text-align: left;
+  padding: 0;
+  margin-bottom: -1em;
+}
+
+.order_summary{
+  width: 20%;
+  border: 1px solid black;
 }

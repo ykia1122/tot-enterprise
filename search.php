@@ -9,22 +9,25 @@
     </head>
 
     <body>
+
 <?php
-include 'includes/header.php';
+
 include 'includes/dbconnection.php';
-session_start();
-if(isset($_REQUEST["cat"])){
-    getCatProduct();
-    
+include 'includes/header.php';
+include 'includes/validation.php';
+
+if(empty($_GET["query"])){
+    ?><script> history.go(-1);</script><?php
 }
 else{
-    getAllProduct();
+    searchProduct();
 }
 
-function getCatProduct(){
+
+function searchProduct(){
+    $query = validateQuery($_GET["query"]);
     $conn = OpenCon();
-    $i = 0;
-    $sql = "SELECT * FROM product WHERE category_id='" . $_REQUEST["cat"] . "'";
+    $sql = "SELECT * FROM product WHERE product_name LIKE '%$query%'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_connect_errno()){
         echo 'Unable to retrieve data from database: ' . mysqli_connect_errno();
@@ -32,27 +35,10 @@ function getCatProduct(){
     else{
         displayProduct($result);
     }
-    
-    
-    CloseCon($conn);
 }
-
-function getAllProduct(){
-    $conn = OpenCon();
-    $sql = "SELECT * FROM product";
-    $result = mysqli_query($conn, $sql);
-    if(mysqli_connect_errno()){
-        echo 'Unable to retrieve data from database: ' . mysqli_connect_errno();
-    }
-    else{
-        displayProduct($result);
-    }
-    CloseCon($conn);
-}
-
 
 function displayProduct($result){
-    printf('<table class="product_table" cellspacing=0><tr>');
+    printf('<table class="product_table" cellspacing=0><tr><td class="title">Search Result: </td></tr><tr>');
     while($row = mysqli_fetch_object($result)){
         printf('
             
@@ -95,8 +81,6 @@ if(isset($_SESSION["cartmsg"])){
 }
 
 ?>
-</tr>
-</table>
 
 </body>
 </html>

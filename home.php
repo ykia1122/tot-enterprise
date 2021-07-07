@@ -58,14 +58,16 @@
         </div>
     </div>
 
-    <table id=home_product>
+        
+    <table class="product_table" cellspacing=0>
         <tr>
-            <td>Mouse</td>
+            <td class="title"><h2>Mouse</h2></td>
         </tr>
         <tr>
             <?php 
                 $conn = OpenCon();
                 $sql = "SELECT * FROM `product` WHERE category_id='CMS'";
+                $i = 0;
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_connect_errno()){
                     echo 'Unable to retrieve data from database: ' . mysqli_connect_errno();
@@ -82,9 +84,9 @@
                     <input type="hidden" name="num" value="1">
                     </form>
                     </td>
-                    
 
                     ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price,$row->product_id);
+                    $i = countColumn($i);
                 }
             ?>
             
@@ -92,14 +94,15 @@
      </table>
 
 
-     <table id=home_product>
+     <table class="product_table" cellspacing=0>
         <tr>
-            <td>Keyboard</td>
+            <td class="title"><h2>Keyboard</h2></td>
         </tr>
         <tr>
             <?php 
                 $conn = OpenCon();
                 $sql = "SELECT * FROM `product` WHERE category_id='CKB'";
+                $i=0;
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_connect_errno()){
                     echo 'Unable to retrieve data from database: ' . mysqli_connect_errno();
@@ -118,6 +121,7 @@
                     </td>
 
                     ',$row->product_id,$row->image_path,$row->product_name,$row->nett_price,$row->product_id);
+                    $i = countColumn($i);
                 }
             ?>
         </tr>
@@ -208,4 +212,14 @@
         unset($_SESSION["cartmsg"]);
     }
 
+
+
+    function countColumn($i){
+        $i++;
+        if($i == 3){
+            printf("</tr><tr>");
+            $i = 0;
+        }
+        return $i;
+    }
 ?>

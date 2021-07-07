@@ -20,11 +20,12 @@
             <div class="profile-dropdown">
             <li><a href="./product.php" class="profile-dropbtn">Products</a>
             <div class="profile-dropdown-content">
-              <a href="./product.php?cat=mouse">Mouse</a>
-              <a href="./product.php?cat=keyboard">Keyboard</a>
-              <a href="./product.php?cat=graphiccard">Graphic Card</a>
-              <a href="./product.php?cat=ram">RAM</a>
-              <a href="./product.php?cat=casing">Casing</a>
+              <a href="./product.php?cat=CMS">Mouse</a>
+              <a href="./product.php?cat=CKB">Keyboard</a>
+              <a href="./product.php?cat=CGC">Graphic Card</a>
+              <a href="./product.php?cat=CRM">RAM</a>
+              <a href="./product.php?cat=CCC">Casing</a>
+              <a href="./product.php?cat=CPD">PenDrive</a>
             </div>
             </li>
             </div>
@@ -33,8 +34,8 @@
         
 
         <div id="search-bar">
-        <form action="" method="POST">        
-          <input type="text" id="search" placeholder="search product">
+        <form action="search.php" method="get">        
+          <input type="text" id="search" name="query" placeholder="search product">
           <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
         </form>
         </div>
@@ -59,19 +60,20 @@
             <div class="profile-dropdown">
             <li><a href="./product.php" class="profile-dropbtn">Products</a>
             <div class="profile-dropdown-content">
-              <a href="./product.php?cat=mouse">Mouse</a>
-              <a href="./product.php?cat=keyboard">Keyboard</a>
-              <a href="./product.php?cat=graphiccard">Graphic Card</a>
-              <a href="./product.php?cat=ram">RAM</a>
-              <a href="./product.php?cat=casing">Casing</a>
+              <a href="./product.php?cat=CMS">Mouse</a>
+              <a href="./product.php?cat=CKB">Keyboard</a>
+              <a href="./product.php?cat=CGC">Graphic Card</a>
+              <a href="./product.php?cat=CRM">RAM</a>
+              <a href="./product.php?cat=CCC">Casing</a>
+              <a href="./product.php?cat=CPD">PenDrive</a>
             </div>
             </li>
             </div>
         </ul>
         
         <div id="search-bar">
-        <form action="" method="POST">        
-          <input type="text" id="search" placeholder="search product">
+        <form action="search.php" method="get">        
+          <input type="text" id="search" name="query" placeholder="search product">
           <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
         </form>
         </div>
