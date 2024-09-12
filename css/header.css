@@ -1,0 +1,402 @@
+#header-bar{
+    background-color:whitesmoke;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    margin-right: -0.5em;
+    height: 6.2em;
+    width:auto;
+}
+#header-bar a,ul,.profile-dropdown,#login,#search-bar{
+    display: inline-block;
+}
+#header-bar li a:hover{
+    color:black;
+    font-weight: bold;
+}
+#header-bar img{
+    padding-top: 0.3em;
+    margin-left: 0.7em;
+    margin-right: 1em;
+}
+#header-bar ul{
+    padding-left: 1em;
+    padding-right: 1em;
+    list-style-type: none;
+}
+#header-bar li{
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    display: inline-block;
+    font-size: 1.7em;
+    position:relative;
+    bottom: 1.4em;
+
+}
+
+#header-bar #search-bar{
+    position:relative;
+    bottom: 40%;
+    left: 5%;
+    width: 35%;
+}
+
+#header-bar #search-bar input{
+    width: 80%;
+    height: 3em;
+    padding-left: 1em;
+}
+
+#header-bar #search-bar button{
+    height: 3em;
+    width: 3.5em;
+    margin-left: -0.4em;
+    border: 1px solid grey;
+    border-left: none;
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+
+#upper-right-corner{
+    float:right;
+    position: relative;
+    margin-top: 1.9em;
+    margin-right: 1em;
+}
+
+#upper-right-corner button{
+    margin-left: 1em;
+}
+
+#loginbtn{
+    width: 6em;
+    height: 2em;
+    font-family: 'Trebuchet MS';
+    font-size: 1.2em;
+    border-radius: 1em;
+    background-color: white;
+}
+
+#loginbtn:hover{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+
+#signupbtn{
+    width: 6em;
+    height: 2em;
+    font-family: 'Trebuchet MS';
+    font-size: 1.2em;
+    border-radius: 1em;
+    background-color: white;
+}
+#signupbtn:hover{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+
+#cart{
+    border:none;
+    background-color: transparent;
+    font-family: 'Trebuchet MS';
+    position: relative;
+    bottom: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#cart i{
+    color:brown;
+}
+
+#cart:hover{
+    cursor: pointer;
+}
+
+#cart-item{
+    width: 1.3em;
+    padding-left: 0.4em;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-color: red;
+    color:white;
+    position: relative;
+    right: 1em;
+    bottom: 1.5em;
+    text-decoration: none;
+}
+
+#profile{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+}
+#profile:hover{
+    cursor: pointer;
+}
+
+#profile .profile_avatar{
+    width: 50px;
+    position: relative;
+    border-radius: 50%;
+    margin-top: -15px;
+    top:5px;
+    left: 0px;
+ 
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top:0;
+    left:0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    height: 85%;
+    position: relative;
+  }
+  
+  /* The Close Button */
+  .close {
+    /* Position it in the top right corner outside of the modal */
+    position: relative;
+    float: right;
+    right: 15px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  /* Close button on hover */
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+  .avatar{
+      border-radius: 50%;
+      width: 30%;
+      position: relative;
+      left: 35%;
+      margin-top: 10px;
+  }
+
+  .container{
+      margin-top: 20px;
+      margin-left: 10px;
+  }
+
+  .container .label{
+      display: block;
+      font-family:Georgia, 'Times New Roman', Times, serif
+  }
+
+
+  .container input[type=text],input[type=password]{
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 15px;
+      width: 98%;
+      height: 30px;
+  }
+
+  .container .btnemail,.btnuname{
+      display: inline-block;
+      width: 20%;
+      height: 40px;
+      margin-left: 20px;
+      background-color: lightgoldenrodyellow;
+      border-color: lightgoldenrodyellow;
+      cursor: pointer;
+  }
+
+  .container .submitbtn{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14pt;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 98%;
+      height: 30px;
+      background-color: lightgreen;
+      border-style: none;
+  }
+
+  .container .submitbtn:hover{
+      background-color: limegreen;
+      font-weight: bold;
+      cursor:pointer;
+  }
+
+  .container .chgpwdbtn{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10pt;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 25%;
+        height: 30px;
+        background-color: lightgreen;
+        border-style: none;
+  }
+
+  .container .chgpwdbtn:hover{
+    background-color: limegreen;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.container .savebtn{
+    font-family: 'Times New Roman', Times, serif;
+    float: right;
+    font-size: 12pt;
+    margin-top: 25px;
+    margin-right: 30px;
+    width: 25%;
+    height: 40px;
+    background-color: lightgreen;
+    border-color: lightgreen;
+    border-radius: 20px;
+}
+
+.container .savebtn:hover{
+background-color: limegreen;
+font-weight: bold;
+cursor:pointer;
+}
+  .container .cancelbtn{
+      margin-top: 24px;
+      margin-left: 15px;
+      height:40px;
+      width: 20%;
+      background-color: lightsalmon;   
+  }
+
+  .container .cancelbtn:hover{
+      cursor: pointer;
+  }
+
+  .container .psw{
+      margin-top: 30px;
+      margin-right: 30px;
+      float:right;
+  }
+
+  .container .AlreadyhaveAnAcc{
+    margin-top: 40px;
+    margin-right: 20px;
+    float:right;
+    border:none;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+
+  .container .signuphere{
+      margin-top: 20px;
+      display: block;
+    text-align: center;
+  }
+
+  .container .signuphere button{
+    border:none;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+ .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:lightcyan;
+    width: 120%;
+    right: -1em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    width:100%;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:lightcyan;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .profile-dropdown-content a {
+    width:100%;
+    color: black;
+    padding: 12px 16px;
+    font-size: 12pt;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  
+  .profile-dropdown-content a:hover {background-color: #ddd;}
+  
+  .profile-dropdown:hover .profile-dropdown-content {display: block;}
+  
+  .profile-dropdown:hover .profile-dropbtn {background-color: #3e8e41;}
+
+  .profile-dropbtn{color:#551A8B;}
+  
+  
+  
